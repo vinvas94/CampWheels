@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/react-homework-template/static/css/main.7acaea2f.css",
-    "main.js": "/react-homework-template/static/js/main.07d3183d.js",
-    "index.html": "/react-homework-template/index.html",
-    "main.7acaea2f.css.map": "/react-homework-template/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/react-homework-template/static/js/main.07d3183d.js.map"
+    "main.css": "/CampWheels/static/css/main.7475395f.css",
+    "main.js": "/CampWheels/static/js/main.2e26b2e8.js",
+    "static/media/Inter-SemiBold.ttf": "/CampWheels/static/media/Inter-SemiBold.6058d3da655fb35169c2.ttf",
+    "static/media/Inter-Medium.ttf": "/CampWheels/static/media/Inter-Medium.3f7acfe50aad7ad68548.ttf",
+    "static/media/Inter-Regular.ttf": "/CampWheels/static/media/Inter-Regular.9ca9ba81e9dcaa12b3a1.ttf",
+    "index.html": "/CampWheels/index.html",
+    "main.7475395f.css.map": "/CampWheels/static/css/main.7475395f.css.map",
+    "main.2e26b2e8.js.map": "/CampWheels/static/js/main.2e26b2e8.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.7475395f.css",
+    "static/js/main.2e26b2e8.js"
   ]
 }
