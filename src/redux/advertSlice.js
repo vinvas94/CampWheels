@@ -12,25 +12,25 @@ const handleRejected = (state, action) => {
 };
 
 export const advertSlice = createSlice({
-  name: 'advert',
+  name: 'adverts',
   initialState: {
-    advert: [],
+    adverts: [],
     isLoading: false,
     error: null,
   },
 
-  extra: builder => {
+  extraReducers: builder => {
     builder
       .addCase(fetchData.fulfilled, (state, action) => {
-        state.advert = action.payload;
+        state.adverts = action.payload;
         state.isLoading = false;
       })
-      .addMatcher(action => action.type.endsWith('pending', handlePending))
-      .addMatcher(action => action.type.endsWith('rejected', handleRejected));
+      .addMatcher(action => action.type.endsWith('pending'), handlePending)
+      .addMatcher(action => action.type.endsWith('rejected'), handleRejected);
   },
 });
 
 export const advertReducer = advertSlice.reducer;
-export const getAdvert = state => state.advert.advert;
-export const getLoading = state => state.advert.isLoading;
-export const getError = state => state.advert.error;
+export const getAdvert = state => state.adverts.adverts;
+export const getLoading = state => state.adverts.isLoading;
+export const getError = state => state.adverts.error;

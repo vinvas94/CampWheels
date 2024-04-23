@@ -21,7 +21,7 @@ const favoritePersistConfig = {
 };
 
 export const reducer = {
-  advert: advertReducer,
+  adverts: advertReducer,
   filter: filterReducer,
   favorites: persistReducer(favoritePersistConfig, favoritesReducer),
 };

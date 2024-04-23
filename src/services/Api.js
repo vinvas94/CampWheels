@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://661d84f998427bbbef0209d3.mockapi.io/advert';
+axios.defaults.baseURL = 'https://66282d0054afcabd0735107a.mockapi.io/api/v1/';
 
-export const fetchData = createAsyncThunk(async (_, thunkAPI) => {
+export const fetchData = createAsyncThunk('adverts', async (_, thunkAPI) => {
   try {
-    const { data } = await axios.get();
+    const { data } = await axios.get('/adverts');
     return data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);

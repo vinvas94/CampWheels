@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const favoriteSlice = createSlice({
   name: 'favorites',
   initialState: { favorites: [] },
-  reducer: {
+  reducers: {
     addFavorite: (state, action) => {
       state.favorites.push(action.payload);
     },
@@ -14,5 +14,5 @@ export const favoriteSlice = createSlice({
 });
 
 export const { addFavorite, deleteFavorite } = favoriteSlice.actions;
-export const getFavorite = state => state.favorites.favorites;
+export const getFavorites = state => state.favorites.favorites;
 export const favoritesReducer = favoriteSlice.reducer;
