@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit/dist';
+import { createSlice } from '@reduxjs/toolkit';
 import { fetchData } from '../services/Api';
 
 const handlePending = state => {

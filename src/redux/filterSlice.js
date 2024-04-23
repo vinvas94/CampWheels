@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit/dist';
+import { createSlice } from '@reduxjs/toolkit';
 
 const filterSlice = createSlice({
   name: 'filter',
@@ -16,10 +16,10 @@ const filterSlice = createSlice({
       fullyIntegrated: false,
       alcove: false,
     },
-    reducer: {
-      startFilter(_, action) {
-        return action.payload;
-      },
+  },
+  reducers: {
+    startFilter(_, action) {
+      return action.payload;
     },
   },
 });
