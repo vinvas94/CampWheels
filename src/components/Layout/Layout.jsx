@@ -1,22 +1,23 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { Container } from './Layout.styled';
 
 export const Layout = () => {
   return (
-    <div>
+    <Container>
       <header>
-        <ul>
-          <li>
+        <ul className="list">
+          <li className="item">
             <Link data-name="home" to="/">
               Home
             </Link>
           </li>
-          <li>
+          <li className="item">
             <Link data-name="catalog" to="/catalog">
               Catalog
             </Link>
           </li>
-          <li>
+          <li className="item">
             <Link data-name="favorites" to="/favorites">
               Favorites
             </Link>
@@ -26,6 +27,6 @@ export const Layout = () => {
       <main>
         <Outlet />
       </main>
-    </div>
+    </Container>
   );
 };

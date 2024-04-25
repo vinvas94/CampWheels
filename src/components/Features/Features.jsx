@@ -1,36 +1,44 @@
+import { ListIcon } from 'components/ListIcon/ListIcon';
+import {
+  FeaturesContainer,
+  FeaturesDetailsContainer,
+  FeaturesDetailsText,
+  FeaturesTitle,
+} from './Features.styled';
+
 export const Features = ({ adverts }) => {
   const { adults, transmission, engine } = adverts;
 
-  const fullDetails = { adults, transmission, engine, ...adverts.details };
+  const FeaturesDetails = { adults, transmission, engine, ...adverts.details };
 
   return (
-    <div>
-      <h2>Vehicle details</h2>
-      <ul details={fullDetails} />
-      <li>
-        <p>Form</p>
-        <p>{adverts.form}</p>
-      </li>
-      <li>
-        <p>Length</p>
-        <p>{adverts.length}</p>
-      </li>
-      <li>
-        <p>Width</p>
-        <p>{adverts.width}</p>
-      </li>
-      <li>
-        <p>Height</p>
-        <p>{adverts.height}</p>
-      </li>
-      <li>
-        <p>Tank</p>
-        <p>{adverts.tank}</p>
-      </li>
-      <li>
-        <p>Consumption</p>
-        <p>{adverts.consumption}</p>
-      </li>
-    </div>
+    <FeaturesContainer>
+      <FeaturesTitle>Vehicle details</FeaturesTitle>
+      <ListIcon details={FeaturesDetails} />
+      <FeaturesDetailsContainer>
+        <FeaturesDetailsText>Form</FeaturesDetailsText>
+        <FeaturesDetailsText>{adverts.form}</FeaturesDetailsText>
+      </FeaturesDetailsContainer>
+      <FeaturesDetailsContainer>
+        <FeaturesDetailsText>Length</FeaturesDetailsText>
+        <FeaturesDetailsText>{adverts.length}</FeaturesDetailsText>
+      </FeaturesDetailsContainer>
+      <FeaturesDetailsContainer>
+        <FeaturesDetailsText>Width</FeaturesDetailsText>
+        <FeaturesDetailsText>{adverts.width}</FeaturesDetailsText>
+      </FeaturesDetailsContainer>
+      <FeaturesDetailsContainer>
+        <FeaturesDetailsText>Height</FeaturesDetailsText>
+        <FeaturesDetailsText>{adverts.height}</FeaturesDetailsText>
+      </FeaturesDetailsContainer>
+      <FeaturesDetailsContainer>
+        <FeaturesDetailsText>Tank</FeaturesDetailsText>
+        <FeaturesDetailsText>{adverts.tank}</FeaturesDetailsText>
+      </FeaturesDetailsContainer>
+      <FeaturesDetailsContainer>
+        <FeaturesDetailsText>Consumption</FeaturesDetailsText>
+        <FeaturesDetailsText>{adverts.consumption}</FeaturesDetailsText>
+      </FeaturesDetailsContainer>
+    </FeaturesContainer>
   );
 };

@@ -1,4 +1,5 @@
 import sprite from '../../assets/svg/iconsSprite.svg';
+import { RatingContainer, RatingSilverContainer } from './Rating.styled';
 
 export const Rating = ({ rating }) => {
   let ratingStar = [];
@@ -10,11 +11,11 @@ export const Rating = ({ rating }) => {
     );
   }
   return (
-    <div>
+    <RatingContainer>
       {ratingStar.map((el, index) => {
         return <span key={index}>{el}</span>;
       })}
-      <div>
+      <RatingSilverContainer>
         <svg width={16} height={16}>
           <use href={`${sprite}#icon-star-silver`} />
         </svg>
@@ -30,7 +31,7 @@ export const Rating = ({ rating }) => {
         <svg width={16} height={16}>
           <use href={`${sprite}#icon-star-silver`} />
         </svg>
-      </div>
-    </div>
+      </RatingSilverContainer>
+    </RatingContainer>
   );
 };

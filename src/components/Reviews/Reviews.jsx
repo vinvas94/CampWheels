@@ -1,19 +1,27 @@
 import { Rating } from '../Rating/Rating';
+import {
+  Info,
+  NameBlock,
+  ReviewsBlock,
+  ReviewsComment,
+  ReviewsItem,
+  ReviewsName,
+} from './Reviews.styled';
 
 export const Reviews = ({ reviews }) => {
   return (
     <ul>
       {reviews.map((el, index) => (
-        <li key={index}>
-          <div>
-            <span>{el.reviewer_name.slice(0, 1)}</span>
-            <div>
-              <p>{el.reviewer_name}</p>
+        <ReviewsItem key={index}>
+          <Info>
+            <NameBlock>{el.reviewer_name.slice(0, 1)}</NameBlock>
+            <ReviewsBlock>
+              <ReviewsName>{el.reviewer_name}</ReviewsName>
               <Rating rating={el.reviewer_rating} />
-            </div>
-          </div>
-          <p>{el.comment}</p>
-        </li>
+            </ReviewsBlock>
+          </Info>
+          <ReviewsComment>{el.comment}</ReviewsComment>
+        </ReviewsItem>
       ))}
     </ul>
   );

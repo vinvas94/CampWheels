@@ -9,6 +9,26 @@ import {
 import sprite from '../../assets/svg/iconsSprite.svg';
 import Backdrop from 'components/Backdrop/Backdrop';
 import { Modal } from 'components/Modal/Modal';
+import {
+  CatalogButton,
+  CatalogButtonFavorites,
+  CatalogContainerReviewsLocation,
+  CatalogDescription,
+  CatalogImage,
+  CatalogItem,
+  CatalogLocation,
+  CatalogPrice,
+  CatalogPriceContainer,
+  CatalogReviews,
+  CatalogTitle,
+  CatalogTitleContainer,
+  CategoriesContainer,
+  CategoriesIcon,
+  CategoriesItem,
+  LocationIcon,
+  ReviewsIcon,
+  TodoContainer,
+} from './Catalog.styled';
 
 export const Catalog = ({ adverts }) => {
   const dispatch = useDispatch();
@@ -39,99 +59,95 @@ export const Catalog = ({ adverts }) => {
 
   return (
     <>
-      <div>
-        <img src={adverts.gallery[0]} alt={adverts.name} />
-        <div>
-          <h1>{adverts.name}</h1>
-          <div>
-            <p>€{adverts.price.toFixed(2)}</p>
-            <button onClick={handleFavorite}>
-              <svg width="24" height="24" style={favoritesButton}>
-                <use href={`${sprite}#icon-heart`} />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div>
-          <a href="fix">
-            <svg width="16" height="16">
-              <use href={`${sprite}#icon-star`} />
-            </svg>
-            {adverts.rating} ({adverts.reviews.length} Reviews)
-          </a>
-        </div>
-        <div>
-          <svg width="16" height="16">
-            <use href={`${sprite}#icon-location`} />
-          </svg>
-          {adverts.location}
-        </div>
-        <p>{adverts.description}</p>
-        <div>
-          <ul>
-            <li>
-              <svg width="20" height="20">
+      <CatalogItem>
+        <CatalogImage src={adverts.gallery[0]} alt={adverts.name} />
+        <TodoContainer>
+          <CatalogTitleContainer>
+            <CatalogTitle>{adverts.name}</CatalogTitle>
+            <CatalogPriceContainer>
+              <CatalogPrice>€{adverts.price.toFixed(2)}</CatalogPrice>
+              <CatalogButtonFavorites onClick={handleFavorite}>
+                <svg width="24" height="24" style={favoritesButton}>
+                  <use href={`${sprite}#icon-heart`} />
+                </svg>
+              </CatalogButtonFavorites>
+            </CatalogPriceContainer>
+          </CatalogTitleContainer>
+          <CatalogContainerReviewsLocation>
+            <CatalogReviews href="">
+              <ReviewsIcon width="16" height="16">
+                <use href={`${sprite}#icon-star`} />
+              </ReviewsIcon>
+              {adverts.rating} ({adverts.reviews.length} Reviews)
+            </CatalogReviews>
+            <CatalogLocation>
+              <LocationIcon width="16" height="16" fill="none" stroke="#101828">
+                <use href={`${sprite}#icon-location`} />
+              </LocationIcon>
+              {adverts.location}
+            </CatalogLocation>
+          </CatalogContainerReviewsLocation>
+          <CatalogDescription>{adverts.description}</CatalogDescription>
+          <CategoriesContainer>
+            <CategoriesItem>
+              <CategoriesIcon width="20" height="20">
                 <use href={`${sprite}#icon-adults`} />
-              </svg>
+              </CategoriesIcon>
               {adverts.adults} adults
-            </li>
-            <li>
-              <svg width="20" height="20">
+            </CategoriesItem>
+            <CategoriesItem>
+              <CategoriesIcon width="20" height="20">
                 <use href={`${sprite}#icon-automatic`} />
-              </svg>
+              </CategoriesIcon>
               {adverts.transmission}
-            </li>
-            <li>
-              <svg width="20" height="20">
+            </CategoriesItem>
+            <CategoriesItem>
+              <CategoriesIcon width="20" height="20">
                 <use href={`${sprite}#icon-petrol`} />
-              </svg>
+              </CategoriesIcon>
               {adverts.engine}
-            </li>
-            <li>
-              <svg width="20" height="20">
+            </CategoriesItem>
+            <CategoriesItem>
+              <CategoriesIcon width="20" height="20">
                 <use href={`${sprite}#icon-kitchen`} />
-              </svg>
+              </CategoriesIcon>
               Kitchen
-            </li>
-            <div>
-              {adverts.details.kitchen > 0 ? (
-                <li>
-                  <svg width="20" height="20">
-                    <use href={`${sprite}#icon-kitchen`} />
-                  </svg>
-                  Kitchen
-                </li>
-              ) : (
-                <></>
-              )}
-            </div>
-            <li>
-              <svg width="20" height="20">
+            </CategoriesItem>
+            {adverts.details.kitchen > 0 ? (
+              <CategoriesItem>
+                <CategoriesIcon width="20" height="20">
+                  <use href={`${sprite}#icon-kitchen`} />
+                </CategoriesIcon>
+                Kitchen
+              </CategoriesItem>
+            ) : (
+              <></>
+            )}
+            <CategoriesItem>
+              <CategoriesIcon width="20" height="20">
                 <use href={`${sprite}#icon-beds`} />
-              </svg>
+              </CategoriesIcon>
               beds
-            </li>
-            <div>
-              {adverts.details.airConditioner > 0 ? (
-                <li>
-                  <svg width="20" height="20">
-                    <use href={`${sprite}#icon-ac`} />
-                  </svg>
-                  AC
-                </li>
-              ) : (
-                <></>
-              )}
-            </div>
-          </ul>
-        </div>
-        <button onClick={handleModalOpen}>Show more</button>
-      </div>
-      {isModalOpen && (
-        <Backdrop close={handleModalOpen}>
-          <Modal adverts={adverts} close={handleModalOpen}></Modal>
-        </Backdrop>
-      )}
+            </CategoriesItem>
+            {adverts.details.airConditioner > 0 ? (
+              <CategoriesItem>
+                <CategoriesIcon width="20" height="20">
+                  <use href={`${sprite}#icon-ac`} />
+                </CategoriesIcon>
+                AC
+              </CategoriesItem>
+            ) : (
+              <></>
+            )}
+          </CategoriesContainer>
+          <CatalogButton onClick={handleModalOpen}>Show more</CatalogButton>
+        </TodoContainer>
+        {isModalOpen && (
+          <Backdrop close={handleModalOpen}>
+            <Modal adverts={adverts} close={handleModalOpen}></Modal>
+          </Backdrop>
+        )}
+      </CatalogItem>
     </>
   );
 };

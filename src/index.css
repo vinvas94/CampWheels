@@ -17,7 +17,8 @@
   src: url('./fonts/Inter-SemiBold.ttf');
 }
 
-:root {
+body {
+  font-family: 'Inter', sans-serif;
   --text-color: #101828;
   --text-comment-color: #475467;
   --button-color: #e44848;
@@ -36,7 +37,8 @@ p {
   margin: 0;
 }
 
-ul li {
+ul,
+li {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -52,6 +54,24 @@ img {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+}
+input {
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  gap: 64px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 @media screen and (min-width: 375px) {
@@ -74,4 +94,94 @@ img {
     padding-right: 64px;
     padding-left: 64px;
   }
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+.react-datepicker__input-container > input {
+  margin-bottom: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.25;
+  background-color: #f7f7f7;
+  padding: 18px;
+  width: 400px;
+  border: none;
+  outline: none;
+}
+.react-datepicker__month-container {
+  font-family: Inter, sans-serif;
+}
+
+.react-datepicker {
+  border: 1px solid #10182833;
+  border-radius: 12px;
+  padding: 16px;
+  width: 325px;
+  background-color: #fff;
+}
+.react-datepicker__header {
+  padding: 0;
+  border: none;
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+.react-datepicker__navigation--previous {
+  top: 16px !important;
+}
+.react-datepicker__navigation--next {
+  top: 16px !important;
+}
+.react-datepicker__month-container {
+  width: 100%;
+}
+.react-datepicker__current-month {
+  color: #101828;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.react-datepicker__month {
+  margin: 0;
+}
+.react-datepicker__day-names {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.react-datepicker__day-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 12px;
+  color: #475467 !important;
+  width: 41px;
+  margin: 0;
+}
+.react-datepicker__day {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-weight: 400;
+  height: 32px;
+  justify-content: center;
+  margin: 6px !important;
+}
+.react-datepicker__navigation {
+  top: 16px;
+}
+.react-datepicker__triangle {
+  display: none;
+}
+.react-datepicker__navigation--next {
+  right: 16px;
+}
+.react-datepicker__navigation--previous {
+  left: 16px;
 }

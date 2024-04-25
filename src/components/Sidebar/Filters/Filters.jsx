@@ -3,6 +3,15 @@ import sprite from '../../../assets/svg/iconsSprite.svg';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { startFilter } from '../../../redux/filterSlice';
+import {
+  Button,
+  ContainerCheckBox,
+  ContainerLabel,
+  ContainerRadio,
+  Form,
+  Input,
+  Text,
+} from './Filters.styled';
 
 export const SideBar = () => {
   const dispatch = useDispatch();
@@ -36,148 +45,162 @@ export const SideBar = () => {
     setRadio(value);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <Form onSubmit={handleSubmit}>
+      <ContainerLabel className="location">
         Location
-        <div>
-          <input
+        <div className="input-location-container">
+          <Input
+            className="input-location"
             type="text"
             name="location"
             placeholder="City"
             value={location}
             onChange={handleLocation}
           />
-          <svg width="18" height="20">
+          <svg
+            className="input-location-icon"
+            width="18"
+            height="20"
+            fill="white"
+          >
             <use href={`${sprite}#icon-location`} />
           </svg>
         </div>
-      </label>
-      <label>
+      </ContainerLabel>
+      <ContainerLabel>
         Filters
-        <p>Vehicle equipment</p>
-        <div>
-          <label>
+        <Text className="text-first">Vehicle equipment</Text>
+        <ContainerCheckBox>
+          <label className="checkbox-label">
             <input
+              className="checkbox-input"
               type="checkbox"
               name="checkBox"
               checked={checkBox.ac}
               value="ac"
               onChange={handleCheckbox}
             />
-            <span>
-              <p>AC</p>
+            <span className="checkmark">
+              <p className="checkmark-text">AC</p>
             </span>
           </label>
-          <label>
+          <label className="checkbox-label">
             <input
+              className="checkbox-input"
               type="checkbox"
               name="checkBox"
               checked={checkBox.automatic}
               value="automatic"
               onChange={handleCheckbox}
             />
-            <span>
+            <span className="checkmark">
               <svg width="32" height="32" fill="none" stroke="#101828">
                 <use href={`${sprite}#icon-automatic`} />
               </svg>
-              <p>Automatic</p>
+              <p className="checkmark-text">Automatic</p>
             </span>
           </label>
-          <label>
+          <label className="checkbox-label">
             <input
+              className="checkbox-input"
               type="checkbox"
               name="checkBox"
               value="kitchen"
               checked={checkBox.kitchen}
               onChange={handleCheckbox}
             />
-            <span>
+            <span className="checkmark">
               <svg width="32" height="32" fill="none" stroke="#101828">
                 <use href={`${sprite}#icon-kitchen`} />
               </svg>
-              <p>Kitchen</p>
+              <p className="checkmark-text">Kitchen</p>
             </span>
           </label>
-          <label>
+          <label className="checkbox-label">
             <input
+              className="checkbox-input"
               type="checkbox"
               name="checkBox"
               checked={checkBox.tv}
               value="tv"
               onChange={handleCheckbox}
             />
-            <span>
+            <span className="checkmark">
               <svg width="32" height="32" fill="none" stroke="#101828">
                 <use href={`${sprite}#icon-tele`} />
               </svg>
-              <p>TV</p>
+              <p className="checkmark-text">TV</p>
             </span>
           </label>
-          <label>
+          <label className="checkbox-label">
             <input
+              className="checkbox-input"
               type="checkbox"
               name="checkBox"
               value="shower"
               checked={checkBox.shower}
               onChange={handleCheckbox}
             />
-            <span>
+            <span className="checkmark">
               <svg width="32" height="32" fill="none" stroke="#101828">
                 <use href={`${sprite}#icon-shower`} />
               </svg>
-              <p>Shower/WC</p>
+              <p className="checkmark-text">Shower/WC</p>
             </span>
           </label>
-        </div>
-        <p>Vehicle type</p>
-        <div>
-          <label>
+        </ContainerCheckBox>
+        <Text>Vehicle type</Text>
+        <ContainerRadio>
+          <label className="radio-label">
             <input
+              className="radio-input"
               onChange={handleRadio}
               type="radio"
               value="van"
               name="radio"
             />
-            <span>
+            <span className="radiomark">
               <svg width="40" height="28" fill="none" stroke="#101828">
                 <use href={`${sprite}#icon-camperventana`} />
               </svg>
-              <p>Van</p>
+              <p className="radiomark-text">Van</p>
             </span>
           </label>
-          <label>
+          <label className="radio-label">
             <input
+              className="radio-input"
               type="radio"
               name="radio"
               value="fullyIntegrated"
               onChange={handleRadio}
             />
-            <span>
+            <span className="radiomark">
               <svg width="40" height="28" fill="none" stroke="#101828">
                 <use href={`${sprite}#icon-campersinventana`} />
               </svg>
-              <p>Fully Integrated</p>
+              <p className="radiomark-text">Fully Integrated</p>
             </span>
           </label>
-          <label>
+          <label className="radio-label">
             <input
+              className="radio-input"
               type="radio"
               name="radio"
               value="alcove"
               onChange={handleRadio}
             />
-            <span>
+            <span className="radiomark">
               <svg width="40" height="28" fill="none" stroke="#101828">
                 <use href={`${sprite}#icon-campertodo`} />
               </svg>
-              <p>Alcove</p>
+              <p className="radiomark-text">Alcove</p>
             </span>
           </label>
-        </div>
-      </label>
-      <button className="button" type="submit">
+        </ContainerRadio>
+      </ContainerLabel>
+      <Button className="button" type="submit">
         Search
-      </button>
-    </form>
+      </Button>
+    </Form>
   );
 };

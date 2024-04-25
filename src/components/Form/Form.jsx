@@ -3,6 +3,17 @@ import Notiflix from 'notiflix';
 import { useState } from 'react';
 import sprite from '../../assets/svg/iconsSprite.svg';
 import ReactDatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import {
+  FormButton,
+  FormCalendar,
+  FormCalendarIcon,
+  FormContainer,
+  FormDescription,
+  FormInput,
+  FormTextarea,
+  FormTitle,
+} from './Form.styled';
 
 export const Form = () => {
   const [date, setDate] = useState('');
@@ -50,30 +61,30 @@ export const Form = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="form__container">
-        <h2>Book your campervan now</h2>
-        <p>Stay connected! We are always ready to help you.</p>
-        <input
-          className="form__input"
+    <>
+      <FormContainer onSubmit={handleSubmit}>
+        <FormTitle>Book your campervan now</FormTitle>
+        <FormDescription>
+          Stay connected! We are always ready to help you.
+        </FormDescription>
+        <FormInput
           type="text"
           name="name"
           onChange={handleChange}
           value={name}
           placeholder="Name"
         />
-        <input
-          className="form__input"
+        <FormInput
           type="email"
           name="email"
           onChange={handleChange}
           value={email}
           placeholder="Email"
         />
-        <div>
-          <svg className="calendarIcon" width={20} height={20}>
+        <FormCalendar>
+          <FormCalendarIcon className="calendarIcon" width={20} height={20}>
             <use href={`${sprite}#icon-calendario`} />
-          </svg>
+          </FormCalendarIcon>
           <ReactDatePicker
             useWeekdaysShort={true}
             required
@@ -83,17 +94,16 @@ export const Form = () => {
             onChange={date => setDate(date)}
             placeholderText="Booking date"
           />
-        </div>
-        <input
-          className="form__textarea"
+        </FormCalendar>
+        <FormTextarea
           name="comment"
           value={comment}
           as="textarea"
           onChange={handleChange}
           placeholder="Comment"
-        ></input>
-        <button type="submit">Send</button>
-      </form>
-    </div>
+        ></FormTextarea>
+        <FormButton type="submit">Send</FormButton>
+      </FormContainer>
+    </>
   );
 };

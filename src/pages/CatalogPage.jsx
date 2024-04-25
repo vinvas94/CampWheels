@@ -6,6 +6,8 @@ import { NoContent } from '../components/NoContent/NoContent';
 import { filter } from '../redux/filterSlice';
 import { filterCars } from '../assets/helpers/FilterFunction';
 import { SideBar } from '../components/Sidebar/Filters/Filters';
+import { ButtonLoadMore } from 'components/Catalog/Catalog.styled';
+import { Container } from 'components/Container/Container';
 
 export const CatalogPage = () => {
   const allCars = useSelector(getAdvert);
@@ -39,7 +41,7 @@ export const CatalogPage = () => {
   }, [allCars]);
 
   return (
-    <>
+    <Container>
       <SideBar />
       {cars.length ? (
         <ul>
@@ -47,12 +49,12 @@ export const CatalogPage = () => {
             <Catalog key={el._id} adverts={el} />
           ))}
           {cars.length > pag && (
-            <button onClick={handleLoadMore}>Load more</button>
+            <ButtonLoadMore onClick={handleLoadMore}>Load more</ButtonLoadMore>
           )}
         </ul>
       ) : (
         <NoContent />
       )}
-    </>
+    </Container>
   );
 };
