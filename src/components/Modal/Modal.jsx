@@ -3,6 +3,7 @@ import { useState } from 'react';
 import sprite from '../../assets/svg/iconsSprite.svg';
 import { Reviews } from 'components/Reviews/Reviews';
 import { Features } from 'components/Features/Features';
+import { Form } from '../Form/Form';
 
 export const Modal = ({ adverts, close }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -60,6 +61,7 @@ export const Modal = ({ adverts, close }) => {
       <div>
         {activeTab === 1 && <Features adverts={adverts} />}
         {activeTab === 2 && <Reviews reviews={adverts.reviews} />}
+        {activeTab !== 0 && <Form />}
       </div>
     </div>
   );

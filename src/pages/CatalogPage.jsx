@@ -5,6 +5,7 @@ import { getAdvert } from '../redux/advertSlice';
 import { NoContent } from '../components/NoContent/NoContent';
 import { filter } from '../redux/filterSlice';
 import { filterCars } from '../assets/helpers/FilterFunction';
+import { SideBar } from '../components/Sidebar/Filters/Filters';
 
 export const CatalogPage = () => {
   const allCars = useSelector(getAdvert);
@@ -39,6 +40,7 @@ export const CatalogPage = () => {
 
   return (
     <>
+      <SideBar />
       {cars.length ? (
         <ul>
           {cars.slice(0, pag).map(el => (
