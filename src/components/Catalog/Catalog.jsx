@@ -46,7 +46,7 @@ export const Catalog = ({ adverts }) => {
           <div>
             <p>€{adverts.price.toFixed(2)}</p>
             <button onClick={handleFavorite}>
-              <svg width="24" height="24">
+              <svg width="24" height="24" style={favoritesButton}>
                 <use href={`${sprite}#icon-heart`} />
               </svg>
             </button>
