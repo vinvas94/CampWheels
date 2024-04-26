@@ -10,12 +10,14 @@ export const FeaturesTitle = styled.h2`
   margin-bottom: 48px;
   padding-bottom: 24px;
   border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+  color: var(--text-color);
 `;
 
 export const FeaturesDetailsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 14px;
+  color: var(--text-color);
 `;
 
 export const FeaturesDetailsText = styled.p`

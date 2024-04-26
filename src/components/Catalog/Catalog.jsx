@@ -29,6 +29,7 @@ import {
   ReviewsIcon,
   TodoContainer,
 } from './Catalog.styled';
+import { Link } from 'react-router-dom';
 
 export const Catalog = ({ adverts }) => {
   const dispatch = useDispatch();
@@ -74,12 +75,14 @@ export const Catalog = ({ adverts }) => {
             </CatalogPriceContainer>
           </CatalogTitleContainer>
           <CatalogContainerReviewsLocation>
-            <CatalogReviews href="">
-              <ReviewsIcon width="16" height="16">
-                <use href={`${sprite}#icon-star`} />
-              </ReviewsIcon>
-              {adverts.rating} ({adverts.reviews.length} Reviews)
-            </CatalogReviews>
+            <Link to>
+              <CatalogReviews href="">
+                <ReviewsIcon width="16" height="16">
+                  <use href={`${sprite}#icon-star`} />
+                </ReviewsIcon>
+                {adverts.rating} ({adverts.reviews.length} Reviews)
+              </CatalogReviews>
+            </Link>
             <CatalogLocation>
               <LocationIcon width="16" height="16" fill="none" stroke="#101828">
                 <use href={`${sprite}#icon-location`} />

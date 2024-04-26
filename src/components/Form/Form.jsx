@@ -1,9 +1,10 @@
-import moment from 'moment';
 import Notiflix from 'notiflix';
 import { useState } from 'react';
 import sprite from '../../assets/svg/iconsSprite.svg';
+
+import moment from 'moment';
 import ReactDatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+
 import {
   FormButton,
   FormCalendar,
@@ -14,6 +15,8 @@ import {
   FormTextarea,
   FormTitle,
 } from './Form.styled';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 export const Form = () => {
   const [date, setDate] = useState('');
@@ -61,8 +64,8 @@ export const Form = () => {
   };
 
   return (
-    <>
-      <FormContainer onSubmit={handleSubmit}>
+    <FormContainer>
+      <form onSubmit={handleSubmit}>
         <FormTitle>Book your campervan now</FormTitle>
         <FormDescription>
           Stay connected! We are always ready to help you.
@@ -82,7 +85,7 @@ export const Form = () => {
           placeholder="Email"
         />
         <FormCalendar>
-          <FormCalendarIcon className="calendarIcon" width={20} height={20}>
+          <FormCalendarIcon width={20} height={20}>
             <use href={`${sprite}#icon-calendario`} />
           </FormCalendarIcon>
           <ReactDatePicker
@@ -103,7 +106,7 @@ export const Form = () => {
           placeholder="Comment"
         ></FormTextarea>
         <FormButton type="submit">Send</FormButton>
-      </FormContainer>
-    </>
+      </form>
+    </FormContainer>
   );
 };

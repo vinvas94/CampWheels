@@ -81,6 +81,9 @@ export const SideBar = () => {
               onChange={handleCheckbox}
             />
             <span className="checkmark">
+              <svg width="32" height="32" fill="#fff" stroke="#000">
+                <use href={`${sprite}#icon-airconditioner`} />
+              </svg>
               <p className="checkmark-text">AC</p>
             </span>
           </label>

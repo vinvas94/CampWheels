@@ -8,25 +8,35 @@ import { filterCars } from '../assets/helpers/FilterFunction';
 import { SideBar } from '../components/Sidebar/Filters/Filters';
 import { ButtonLoadMore } from 'components/Catalog/Catalog.styled';
 import { Container } from 'components/Container/Container';
+import Loaders from 'components/Loader/Loader';
 
 export const CatalogPage = () => {
   const allCars = useSelector(getAdvert);
-
   const filters = useSelector(filter);
-
   const [cars, setCars] = useState([]);
   const [pag, setPag] = useState(4);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    setIsLoading(true);
     if (
-      Object.values(filters.radio).every(el => Boolean(el) === false) &&
-      Object.values(filters.checkBox).every(el => Boolean(el) === false) &&
+      Object.values(filters.radio).every(el => !el) &&
+      Object.values(filters.checkBox).every(el => !el) &&
       !filters.location
     ) {
-      setCars(() => [...allCars]);
+      setCars([...allCars]);
+      setIsLoading(false);
       return;
     }
     setCars(filterCars(allCars, filters));
+    setIsLoading(false);
   }, [allCars, filters]);
 
   useEffect(() => {
@@ -36,25 +46,23 @@ export const CatalogPage = () => {
   const handleLoadMore = () => {
     setPag(pag + 4);
   };
+
   useEffect(() => {
-    setCars(() => [...allCars]);
+    setCars([...allCars]);
   }, [allCars]);
 
   return (
     <Container>
+      {isLoading && <Loaders />}
       <SideBar />
-      {cars.length ? (
-        <ul>
-          {cars.slice(0, pag).map(el => (
-            <Catalog key={el._id} adverts={el} />
-          ))}
-          {cars.length > pag && (
-            <ButtonLoadMore onClick={handleLoadMore}>Load more</ButtonLoadMore>
-          )}
-        </ul>
-      ) : (
-        <NoContent />
-      )}
+      <ul>
+        {cars.slice(0, pag).map(el => (
+          <Catalog key={el._id} adverts={el} />
+        ))}
+        {cars.length > pag && (
+          <ButtonLoadMore onClick={handleLoadMore}>Load more</ButtonLoadMore>
+        )}
+      </ul>
     </Container>
   );
 };

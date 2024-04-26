@@ -57,8 +57,9 @@ export const CatalogContainerReviewsLocation = styled.div`
 `;
 
 export const CatalogReviews = styled.a`
-  border-bottom: 1px solid #101828;
+  border-bottom: 1px solid var(--text-color);
   padding-bottom: 1px;
+  color: var(--text-color);
 `;
 
 export const ReviewsIcon = styled.svg`
@@ -70,6 +71,7 @@ export const ReviewsIcon = styled.svg`
 export const CatalogLocation = styled.span`
   position: relative;
   padding-left: 20px;
+  color: var(--text-color);
 `;
 
 export const LocationIcon = styled.svg`
@@ -99,6 +101,17 @@ export const CategoriesItem = styled.li`
   padding: 12px 18px 12px 46px;
   border-radius: 100px;
   background-color: var(--background-icon-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: var(--text-color);
+  &:active {
+    background-color: #f2f4f7;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  &:hover {
+    background-color: #f2f4f7;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 export const CategoriesIcon = styled.svg`

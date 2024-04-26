@@ -33,5 +33,5 @@ export const ReviewsName = styled.p`
 export const ReviewsComment = styled.p`
   width: 430px;
   line-height: 150%;
-  color: var(--text-color);
+  color: var(--text-comment-color);
 `;

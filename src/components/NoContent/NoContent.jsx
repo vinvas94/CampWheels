@@ -1,3 +1,9 @@
+import errorImage from '../../assets/images/error-404.jpg';
+
 export const NoContent = () => {
-  return <p>No Content</p>;
+  return (
+    <div>
+      <img src={errorImage} alt="Error" />
+    </div>
+  );
 };

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FormContainer = styled.form`
+export const FormContainer = styled.div`
   width: 448px;
   height: 532px;
   padding: 24px;
@@ -15,7 +15,7 @@ export const FormTitle = styled.h2`
 
 export const FormDescription = styled.p`
   margin-bottom: 24px;
-  color: var(--text-color);
+  color: var(--text-comment-color);
 `;
 
 export const FormInput = styled.input`

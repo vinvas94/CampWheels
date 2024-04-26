@@ -30,6 +30,7 @@ export const ReviewsContainer = styled.div`
   gap: 16px;
   font-size: 16px;
   margin-bottom: 16px;
+  color: var(--text-color);
 `;
 export const ReviewsSpan = styled.span`
   text-decoration: underline;

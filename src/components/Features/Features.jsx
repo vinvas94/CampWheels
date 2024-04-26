@@ -13,8 +13,8 @@ export const Features = ({ adverts }) => {
 
   return (
     <FeaturesContainer>
-      <FeaturesTitle>Vehicle details</FeaturesTitle>
       <ListIcon details={FeaturesDetails} />
+      <FeaturesTitle>Vehicle details</FeaturesTitle>
       <FeaturesDetailsContainer>
         <FeaturesDetailsText>Form</FeaturesDetailsText>
         <FeaturesDetailsText>{adverts.form}</FeaturesDetailsText>

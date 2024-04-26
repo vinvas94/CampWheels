@@ -25,6 +25,7 @@ body {
   --reviews-color: #ffc531;
   --background-icon-color: #f2f4f7;
   --background-color: #f7f7f7;
+  margin: 0;
 }
 
 h1,
@@ -74,28 +75,6 @@ a {
   padding-left: 15px;
 }
 
-@media screen and (min-width: 375px) {
-  .container {
-    max-width: 375px;
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-    padding-right: 32px;
-    padding-left: 32px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
-    padding-right: 64px;
-    padding-left: 64px;
-  }
-}
-
 .react-datepicker-wrapper {
   width: 100%;
 }
@@ -107,6 +86,7 @@ a {
   background-color: #f7f7f7;
   padding: 18px;
   width: 400px;
+
   border: none;
   outline: none;
 }
@@ -184,4 +164,25 @@ a {
 }
 .react-datepicker__navigation--previous {
   left: 16px;
+}
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding-right: 64px;
+    padding-left: 64px;
+  }
 }
