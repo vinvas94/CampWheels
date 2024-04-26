@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/CampWheels/static/css/main.e84aaa1f.css",
-    "main.js": "/CampWheels/static/js/main.9ccd7f41.js",
+    "main.css": "/CampWheels/static/css/main.9b0ba8f7.css",
+    "main.js": "/CampWheels/static/js/main.23a990e9.js",
+    "static/media/slide_1.jpg": "/CampWheels/static/media/slide_1.68b9d48a44149369202b.jpg",
     "static/media/Inter-SemiBold.ttf": "/CampWheels/static/media/Inter-SemiBold.6058d3da655fb35169c2.ttf",
     "static/media/Inter-Medium.ttf": "/CampWheels/static/media/Inter-Medium.3f7acfe50aad7ad68548.ttf",
     "static/media/Inter-Regular.ttf": "/CampWheels/static/media/Inter-Regular.9ca9ba81e9dcaa12b3a1.ttf",
+    "static/media/slide_2.jpg": "/CampWheels/static/media/slide_2.bdf9de613d9f6130c8ad.jpg",
+    "static/media/slide_3.jpg": "/CampWheels/static/media/slide_3.774ceb835f37c431a9db.jpg",
     "static/media/iconsSprite.svg": "/CampWheels/static/media/iconsSprite.6c296d62b4864129fa8323fbf5b00d6d.svg",
     "index.html": "/CampWheels/index.html",
-    "main.e84aaa1f.css.map": "/CampWheels/static/css/main.e84aaa1f.css.map",
-    "main.9ccd7f41.js.map": "/CampWheels/static/js/main.9ccd7f41.js.map"
+    "main.9b0ba8f7.css.map": "/CampWheels/static/css/main.9b0ba8f7.css.map",
+    "main.23a990e9.js.map": "/CampWheels/static/js/main.23a990e9.js.map"
   },
   "entrypoints": [
-    "static/css/main.e84aaa1f.css",
-    "static/js/main.9ccd7f41.js"
+    "static/css/main.9b0ba8f7.css",
+    "static/js/main.23a990e9.js"
   ]
 }
