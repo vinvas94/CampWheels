@@ -2,7 +2,6 @@ import { Catalog } from '../components/Catalog/Catalog';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getAdvert } from '../redux/advertSlice';
-import { NoContent } from '../components/NoContent/NoContent';
 import { filter } from '../redux/filterSlice';
 import { filterCars } from '../assets/helpers/FilterFunction';
 import { SideBar } from '../components/Sidebar/Filters/Filters';
